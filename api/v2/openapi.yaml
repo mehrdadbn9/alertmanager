@@ -257,21 +257,46 @@ responses:
     schema:
       type: object
       properties:
+        status:
+          type: string
+          enum: ["error"]
+        errorType:
+          type: string
         error:
           type: string
       required:
+        - status
         - error
   InternalServerError:
     description: Internal server error
     schema:
       type: object
       properties:
+        status:
+          type: string
+          enum: ["error"]
+        errorType:
+          type: string
         error:
           type: string
       required:
+        - status
         - error
   NotFound:
     description: Resource not found
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: ["error"]
+        errorType:
+          type: string
+        error:
+          type: string
+      required:
+        - status
+        - error
 
 
 definitions:
